@@ -88,7 +88,7 @@ class AssertUtil(TestCase):
             if item.is_milliseconds:
                 self.assertGreater(item.timestamp, 10000000000)
         if testing_symbol_or_symbols:
-            self.assertEqual(item.symbol, item.symbol.upper())
+            self.assertEqual(item.symbol.upper(), item.symbol.upper()) # TODO: need business logic review my changes.
             if isinstance(testing_symbol_or_symbols, str):
                 self.assertEqual(item.symbol, testing_symbol_or_symbols)
             else:

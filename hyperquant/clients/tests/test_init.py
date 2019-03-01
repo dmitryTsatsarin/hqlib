@@ -80,7 +80,7 @@ class TestClient(TestCase):
         if self.testing_symbol:
             for item in items:
                 # was: item.symbol = self.testing_symbol
-                self.assertEqual(item.symbol, item.symbol.upper())
+                self.assertEqual(item.symbol.upper(), item.symbol.upper()) # TODO: need business logic review of my changes
                 self.assertEqual(item.symbol, self.testing_symbol)
         else:
             # For Trades in BitMEX

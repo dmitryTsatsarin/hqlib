@@ -10,17 +10,20 @@ from hyperquant.clients.bitmex import BitMEXRESTClient, BitMEXWSClient
 #     # todo add default credentials
 #     print("settings.configure() for clients")
 #     settings.configure(base)
+from hyperquant.clients.okex import OkexRESTClient, OkexWSClient
 
 _rest_client_class_by_platform_id = {
     Platform.BINANCE: BinanceRESTClient,
     Platform.BITFINEX: BitfinexRESTClient,
     Platform.BITMEX: BitMEXRESTClient,
+    Platform.OKEX: OkexRESTClient,
 }
 
 _ws_client_class_by_platform_id = {
     Platform.BINANCE: BinanceWSClient,
     Platform.BITFINEX: BitfinexWSClient,
     Platform.BITMEX: BitMEXWSClient,
+    Platform.OKEX: OkexWSClient,
 }
 
 _rest_client_by_platform_id = {}
