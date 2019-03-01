@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #command: /bin/bash
+    command: pipenv run python run_demo.py
+    volumes:
+    - .:/code
+    networks:
+      - hqlib_network
+
+networks:
+  hqlib_network:
+    driver: bridge
